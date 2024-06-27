@@ -1,0 +1,53 @@
+{% extends "mail/layout.html" %}
+{% load static %}
+
+{% block nav %}
+    <div class="d-flex justify-content-around p-3 align-items-center" style="background-color:#eaeaea">
+        <p class="fw-semibold fs-1 m-0">CS50 Mail</p>
+        
+        <div>
+            <button class="btn btn-sm btn-outline-dark px-5 py-2 mx-2" id="inbox">Inbox</button>
+            <button class="btn btn-sm btn-outline-dark px-5 py-2 mx-2" id="compose">Compose</button>
+            <button class="btn btn-sm btn-outline-dark px-5 py-2 mx-2" id="sent">Sent</button>
+            <button class="btn btn-sm btn-outline-dark px-5 py-2 mx-2" id="archived">Archived</button>
+        </div>
+        <div class="d-flex flex-column justify-content-evenly">
+            <p class="fw-medium fs-5 m-0">{{ request.user.email }}</p>
+            <a class="btn btn-sm btn-outline-danger p-0" href="{% url 'logout' %}">Log Out</a>
+        </div>
+    </div>
+    <hr class="m-0">
+{% endblock %}
+
+{% block body %}
+
+    <div class="container alertContainer"></div>
+
+    <div id="emails-view">
+    </div>
+
+    <div id="compose-view">
+        <p id="email-type" class="text-center fs-1 fw-medium p-2"></p>
+        <form id="compose-form">
+            <div class="input-group flex-nowrap">
+                <span class="input-group-text" id="addon-wrapping">From:</span>
+                <input type="text" disabled class="form-control" value="{{ request.user.email }}">
+            </div>
+            <div class="input-group flex-nowrap">
+                <span class="input-group-text" id="addon-wrapping">To:</span>
+                <input type="text"  class="form-control" id="compose-recipients">
+            </div>
+            <div class="form-group my-3">
+                <input class="form-control" id="compose-subject" placeholder="Subject">
+            </div>
+            <textarea class="form-control" id="compose-body" placeholder="Body"></textarea>
+            <input id="submit" type="submit" class="btn btn-success my-2"/>
+        </form>
+    </div>
+
+    <div id="email-content-view"></div>
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'mail/inbox.js' %}"></script>
+{% endblock %}

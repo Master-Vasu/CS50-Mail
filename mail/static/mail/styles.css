@@ -1,0 +1,50 @@
+body {
+    background-color: #f0f0f0;
+    background-image: url('bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+textarea {
+    height: 40vh;
+}
+
+.mailbox {
+    background-color: white;
+    border: 2px black solid;
+    padding: 5px;
+    margin-bottom: 8px;
+}
+.mailbox:hover {
+    cursor: pointer;
+    background-color: #eaeaea;
+}
+
+.mailbox-read {
+    border: 2px gray solid;
+    padding: 5px;
+    margin-bottom: 8px;
+    background-color: #eaeaea;
+    cursor: pointer;
+}
+
+.mail-content {
+    font-weight: bold;
+    padding: 0 1rem;
+    min-width: 20%;
+    text-align: center;
+}
+
+.mail-content-read {
+    font-weight: normal;
+    padding: 0 1rem;
+    min-width: 20%;
+    text-align: center;
+}
+
+.emailbox {
+    border: 2px solid black;
+    background-color: #f0f0f0;
+}
