@@ -1,6 +1,6 @@
 # CS50 Mail
 
-CS50 Mail is a web application for managing emails, developed as part of the CS50 Web Programming with Python and JavaScript course. The application is built using Django and allows users to send, receive, and manage emails through a modern web interface.
+CS50 Mail is a web application for managing emails, developed as part of the CS50 Web Programming with Python and JavaScript course. The application is built using Django and Vanilla JS which allows users to send, receive, and manage emails through a modern web interface.
 
 
 ## Features
